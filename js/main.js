@@ -503,25 +503,11 @@ function renderCards(dataSet){
         cardEl = document.createElement('div')
         cardEl.setAttribute('data-card',element.card)
         cardEl.setAttribute('class','card')
-        cardEl.setAttribute('draggable','true')
-        cardEl.setAttribute('ondrop','drop(event)')
-        cardEl.setAttribute('ondragover','allowDrop(event)')
+
 
         gameBoardEl.appendChild(cardEl)
     })
 }
-
-function drop(ev){
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-    console.log(data)
-
-
-}
-function allowDrop(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
 getColumnEls();
 render();
 renderCards(cards);
